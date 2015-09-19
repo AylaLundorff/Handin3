@@ -1,37 +1,106 @@
 package com.example.ayla.handin3mobi1;
 
+import android.content.Intent;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
+
+
+    private Button compass_button;
+    private Button lightsaber_button;
+    private Button geiger_button;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-    }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
+        //Instantiate views
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
+        compass_button = (Button) findViewById(R.id.t1);
+        lightsaber_button = (Button) findViewById(R.id.t2);
+        geiger_button = (Button) findViewById(R.id.t3);
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        //Attach listener
+        compass_button.setOnClickListener(clickonbutton1);
+        lightsaber_button.setOnClickListener(clickonbutton2);
+        geiger_button.setOnClickListener(clickonbutton3);
+
         }
 
-        return super.onOptionsItemSelected(item);
-    }
+    View.OnClickListener clickonbutton1 = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+
+            //create explicit intent
+            Intent compassintent = new Intent(MainActivity.this, CompassActivity.class);
+            startActivity(compassintent);
+        }
+    };
+
+    View.OnClickListener clickonbutton2 = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+
+            //create explicit intent
+            Intent lightsaberintent = new Intent(MainActivity.this, LightsaberActivity.class);
+            startActivity(lightsaberintent);
+        }
+
+    };
+    View.OnClickListener clickonbutton3 = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+
+            //create explicit intent
+            Intent geigerintent = new Intent(MainActivity.this, GeigerActivity.class);
+            startActivity(geigerintent);
+        }
+    };
 }
+
+
+
+
+/*
+private Menu _menu = null;
+
+        @Override
+        public boolean onCreateOptionsMenu(Menu menu)
+        {
+            // Inflate the menu; this adds items to the action bar if it is present.
+            getMenuInflater().inflate(R.menu.menu_main, menu);
+            _menu = menu;
+            return true;
+
+     private Menu getMenu()
+        {
+            //use it like this
+            return _menu;
+        }
+
+       @Override
+        public boolean onOptionsItemSelected(MenuItem item) {
+            int id = item.getItemId();
+           switch (id) {
+               case R.id.t1:
+                   Toast.makeText(this, "You pressed Compass", Toast.LENGTH_SHORT.show();
+                   return true; //break omitted
+               case R.id.t2:
+                   Toast.makeText(this,"You pressed Lightsaber",Toast.LENGTH_SHORT.show();
+                   return true; //break omitted
+               case R.id.t3:
+                   Toast.makeText(this,"You pressed Geiger",Toast.LENGTH_SHORT.show();
+                   return true; //break omitted
+               default:
+                   return super.onOptionsItemSelected(item);
+                   }
+ */

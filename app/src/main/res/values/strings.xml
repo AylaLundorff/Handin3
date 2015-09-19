@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">Handin 3 MOBI1</string>
-
-    <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="button_compass">Compass</string>
+    <string name="button_lightsaber">Lightsaber</string>
+    <string name="button_geiger">Geiger</string>
+    <string name="selectaction">Select An Intergalactic Action</string>
 </resources>

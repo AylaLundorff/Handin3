@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.ayla.handin3mobi1" >
+    <uses-feature android:name="android.hardware.screen.portrait"/>
 
     <application
         android:allowBackup="true"
@@ -12,10 +13,21 @@
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".CompassActivity"
+            android:label="CompassActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name=".GeigerActivity"
+            android:label="GeigerActivity" >
+        </activity>
+        <activity
+            android:name=".LightsaberActivity"
+            android:label="LightsaberActivity">
+        </activity>
     </application>
-
 </manifest>
