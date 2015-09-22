@@ -77,7 +77,7 @@ public class CompassActivity extends AppCompatActivity implements SensorEventLis
 
         RotateAnimation rotateAnimation = new RotateAnimation(currentCompassAngle, azimuthDegrees, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
 
-        rotateAnimation.setDuration(2500);
+        rotateAnimation.setDuration(10);
         rotateAnimation.setFillAfter(true);
         compassImage.startAnimation(rotateAnimation);
     }

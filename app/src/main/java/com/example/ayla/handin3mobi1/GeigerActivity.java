@@ -81,7 +81,7 @@ public class GeigerActivity extends AppCompatActivity implements SensorEventList
             }
 
             if (Math.round(y) == 1)  {
-                soundPool.play(soundtick, 0.2f, 0.2f, 1, -1, 1.7f);
+                soundPool.play(soundtick, 0.2f, 0.2f, 1, -1, 1.5f);
             }
 
             if (Math.round(y) == 2)  {
@@ -89,15 +89,15 @@ public class GeigerActivity extends AppCompatActivity implements SensorEventList
             }
 
             if (Math.round(y) == 3)  {
-                soundPool.play(soundtick, 0.2f, 0.2f, 1, -1, 1.3f);
+                soundPool.play(soundtick, 0.2f, 0.2f, 1, -1, 1.2f);
             }
 
             if (Math.round(y) == 4)  {
-                soundPool.play(soundtick, 0.2f, 0.2f, 1, -1, 1.1f);
+                soundPool.play(soundtick, 0.2f, 0.2f, 1, -1, 1.2f);
             }
 
             if (Math.round(y) == 5)  {
-                soundPool.play(soundtick, 0.2f, 0.2f, 1, -1, 0.9f);
+                soundPool.play(soundtick, 0.2f, 0.2f, 1, -1, 0.8f);
             }
             if (Math.round(y) == 6)  {
                 soundPool.play(soundtick, 0.2f, 0.2f, 1, -1, 0.8f);

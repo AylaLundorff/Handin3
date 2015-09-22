@@ -92,7 +92,7 @@ public class LightsaberActivity extends AppCompatActivity implements SensorEvent
                 z = event.values[2];
             } else {
                 if (Math.abs(event.values[1] - y) > 2 || Math.abs(event.values[0] - x) > 2 || Math.abs(event.values[2] - z) > 2) {
-                    soundPool.play(saberSwing, 0.2f, 0.2f, 1, 1, 1f);
+                    soundPool.play(saberSwing, 0.2f, 0.2f, 1, 1, 1.7f);
                 }
                 x = event.values[0];
                 y = event.values[1];
