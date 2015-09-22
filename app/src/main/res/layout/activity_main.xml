@@ -14,7 +14,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="@string/selectaction"
-        android:textSize="22sp"
+        android:textSize="20sp"
         android:textColor="#FFFFFF"
         android:textStyle="bold"
         android:gravity="center"

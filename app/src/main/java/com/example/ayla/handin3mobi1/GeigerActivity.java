@@ -31,16 +31,16 @@ public class GeigerActivity extends AppCompatActivity implements SensorEventList
         sm = (SensorManager) getSystemService(SENSOR_SERVICE);
         accelerometer = sm.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
 
-        soundtick = soundPool.load(this, R.raw.tick, 1);
-        soundPool.setVolume(idsoundtick, vol, vol);
-
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             createNewSoundPool();
-            Toast.makeText(this, "Using Lollipop or never", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Using Lollipop or newer", Toast.LENGTH_LONG).show();
         }else{
             createOldSoundPool();
             Toast.makeText(this, "Using pre Lollipop", Toast.LENGTH_LONG).show();
         }
+
+        soundtick = soundPool.load(this, R.raw.tick, 1);
+        soundPool.setVolume(idsoundtick, vol, vol);
 
         soundPool.setOnLoadCompleteListener(new SoundPool.OnLoadCompleteListener() {
             @Override
@@ -123,7 +123,7 @@ public class GeigerActivity extends AppCompatActivity implements SensorEventList
     protected void onResume() {
         super.onResume();
         sm.registerListener(this, accelerometer, SensorManager.SENSOR_DELAY_GAME);
-        soundPool.autoPause();
+        soundPool.autoResume();
     }
     @Override
     protected void onPause() {

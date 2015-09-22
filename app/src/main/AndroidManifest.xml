@@ -20,14 +20,25 @@
             android:name=".CompassActivity"
             android:label="CompassActivity"
             android:screenOrientation="portrait">
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".GeigerActivity"
-            android:label="GeigerActivity" >
+            android:label="GeigerActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".LightsaberActivity"
-            android:label="LightsaberActivity">
+            android:label="LightsaberActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 </manifest>

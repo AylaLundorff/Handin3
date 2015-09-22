@@ -35,12 +35,6 @@ public class LightsaberActivity extends AppCompatActivity implements SensorEvent
         sm = (SensorManager) getSystemService(SENSOR_SERVICE);
         accelerometer = sm.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
 
-        soundhumhigh = soundPool.load(this, R.raw.saberhum_hf, 1);
-        soundhumlow = soundPool.load(this,R.raw.saberhum_lf,1);
-        saberSwing = soundPool.load(this,R.raw.saberswing,1);
-        soundPool.setVolume(idsoundhumhigh, vol, vol);
-
-
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             createNewSoundPool();
             Toast.makeText(this, "Using Lollipop or never", Toast.LENGTH_LONG).show();
@@ -48,6 +42,12 @@ public class LightsaberActivity extends AppCompatActivity implements SensorEvent
             createOldSoundPool();
             Toast.makeText(this, "Using pre Lollipop", Toast.LENGTH_LONG).show();
         }
+
+        soundhumhigh = soundPool.load(this,R.raw.hf,1);
+        soundhumlow = soundPool.load(this,R.raw.lf,1);
+        saberSwing = soundPool.load(this,R.raw.saberswing,1);
+        soundPool.setVolume(idsoundhumhigh, vol, vol);
+
 
         soundPool.setOnLoadCompleteListener(new SoundPool.OnLoadCompleteListener() {
             @Override
@@ -85,20 +85,18 @@ public class LightsaberActivity extends AppCompatActivity implements SensorEvent
     @Override
     public void onSensorChanged(SensorEvent event) {
         if (event.sensor == accelerometer) {
-            if (x == 0.0){
+
+            if (x == 0.0) {
                 x = event.values[0];
                 y = event.values[1];
                 z = event.values[2];
             } else {
-                if (Math.abs(event.values[0] - x) > 2 || (Math.abs(event.values [0] - y) > 2) || (Math.abs(event.values [0] - z) > 2))
-                {
-               soundPool.play(saberSwing, 1f, 1f, 1, 1, 1f);
+                if (Math.abs(event.values[1] - y) > 2 || Math.abs(event.values[0] - x) > 2 || Math.abs(event.values[2] - z) > 2) {
+                    soundPool.play(saberSwing, 0.2f, 0.2f, 1, 1, 1f);
                 }
-
                 x = event.values[0];
                 y = event.values[1];
                 z = event.values[2];
-
             }
         }
     }
@@ -112,7 +110,7 @@ public class LightsaberActivity extends AppCompatActivity implements SensorEvent
     protected void onResume() {
         super.onResume();
         sm.registerListener(this, accelerometer, SensorManager.SENSOR_DELAY_GAME);
-        soundPool.autoPause();
+        soundPool.autoResume();
     }
     @Override
     protected void onPause() {

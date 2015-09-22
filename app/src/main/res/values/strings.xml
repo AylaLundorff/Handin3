@@ -4,5 +4,5 @@
     <string name="button_compass">Compass</string>
     <string name="button_lightsaber">Lightsaber</string>
     <string name="button_geiger">Geiger</string>
-    <string name="selectaction">Select An Intergalactic Action</string>
+    <string name="selectaction">Select an intergalactic action:</string>
 </resources>
